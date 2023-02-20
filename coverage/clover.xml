@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1676909194975" clover="3.2.0">
-  <project timestamp="1676909194975" name="All files">
-    <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="10" coveredelements="10" complexity="0" loc="8" ncloc="8" packages="1" files="1" classes="1"/>
+<coverage generated="1676909270299" clover="3.2.0">
+  <project timestamp="1676909270299" name="All files">
+    <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="15" coveredelements="15" complexity="0" loc="13" ncloc="13" packages="1" files="1" classes="1"/>
     <file name="transaction.js" path="/Users/adam/Desktop/mock-tech-test/transaction.js">
-      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <line num="3" count="2" type="stmt"/>
       <line num="7" count="2" type="stmt"/>
       <line num="8" count="2" type="stmt"/>
@@ -11,7 +11,12 @@
       <line num="10" count="2" type="stmt"/>
       <line num="11" count="2" type="stmt"/>
       <line num="12" count="2" type="stmt"/>
-      <line num="16" count="1" type="stmt"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="17" count="2" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="19" count="2" type="stmt"/>
+      <line num="20" count="2" type="stmt"/>
+      <line num="25" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

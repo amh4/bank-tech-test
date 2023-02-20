@@ -4,13 +4,18 @@ class Transaction{
   }
 
   deposit(amount) {
+    this.currentTransaction.push(this.#dateFormatter(), amount)
+    console.log(this.currentTransaction)
+  }
+
+  #dateFormatter(){
     const date = new Date()
     let day = date.getDate()
     let month = date.getMonth()+1
     let year = date.getFullYear()
-    this.currentTransaction.push(`${day}/${month}/${year}`, amount)
-    console.log(this.currentTransaction)
+    return `${day}/${month}/${year}`
   }
 }
+
 
 module.exports = Transaction
