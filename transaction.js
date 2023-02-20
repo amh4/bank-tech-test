@@ -4,8 +4,7 @@ class Transaction{
   }
 
   deposit(amount) {
-    this.currentTransaction.push(this.#dateFormatter(), amount)
-    console.log(this.currentTransaction)
+    this.currentTransaction.push(this.#dateFormatter(), amount, "")
   }
 
   #dateFormatter(){
