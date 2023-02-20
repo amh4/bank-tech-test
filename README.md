@@ -51,21 +51,16 @@ class Transaction{
 
   deposit(amount){
   if(inputCheck(amount))
-    let credit = [date, amount, 0, this.balance]
-    adds to this.transactionHistory start (unshift)
-    adds amount to this.currentBalance
+    let credit = [date, amount, 0]
+    adds to this.transaction
   else
     print error asking for integer as input
   }
 
   withdraw(amount) {
     if(inputCheck(amount))
-      if(check account has enough)
-        let debit = [date, 0, amount, this.balance]
-        adds to this.transactionHistory start (unshift)
-        removes amount from this.currentBalance
-      else
-        print insufficient funds
+      let debit = [date, 0, amount]
+      adds to this.transaction
     else
       print error asking for integer as input
   }
