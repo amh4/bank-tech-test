@@ -25,4 +25,12 @@ describe('Transaction class', () => {
       expect(userTransaction.deposit('hello')).toBe('Please enter a number')
     })
   })
+
+  describe('withdrawal method', () => {
+    it('takes int for withdrawal and adds details to currentTransaction', () => {
+      const userTransaction = new Transaction()
+      userTransaction.withdrawal(100)
+      expect(userTransaction.currentTransaction).toEqual(['20/2/2023', "", 100])
+    })
+  })
 })

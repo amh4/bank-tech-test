@@ -11,6 +11,10 @@ class Transaction{
     }
   }
 
+  withdrawal(amount) {
+    this.currentTransaction.push(this.#dateFormatter(), "", amount)
+  }
+
   #dateFormatter(){
     const date = new Date()
     let day = date.getDate()
