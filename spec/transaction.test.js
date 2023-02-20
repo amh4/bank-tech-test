@@ -32,5 +32,10 @@ describe('Transaction class', () => {
       userTransaction.withdrawal(100)
       expect(userTransaction.currentTransaction).toEqual(['20/2/2023', "", 100])
     })
+
+    it('returns a message if input is not an int', () => {
+      const userTransaction = new Transaction()
+      expect(userTransaction.withdrawal('hello')).toEqual('Please enter a number')
+    })
   })
 })

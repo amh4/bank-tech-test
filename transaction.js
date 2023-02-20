@@ -12,7 +12,11 @@ class Transaction{
   }
 
   withdrawal(amount) {
-    this.currentTransaction.push(this.#dateFormatter(), "", amount)
+    if(this.#inputTypeChecker(amount)){
+      return this.currentTransaction.push(this.#dateFormatter(), "", amount)
+    } else {
+      return 'Please enter a number'
+    }
   }
 
   #dateFormatter(){
