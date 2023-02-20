@@ -4,7 +4,11 @@ class Transaction{
   }
 
   deposit(amount) {
-    this.currentTransaction.push(this.#dateFormatter(), amount, "")
+    if(Number.isInteger(amount)){
+      return this.currentTransaction.push(this.#dateFormatter(), amount, "")
+    } else {
+      return 'Please enter a number'
+    }
   }
 
   #dateFormatter(){
