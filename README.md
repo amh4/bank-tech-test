@@ -41,7 +41,7 @@ Balance
 Deposit(to add - credit)
 Withdrawal (to subtract - withdrawal)
 
-### Class and Method
+### Classes and Methods
 
 ```
 class Transaction{
