@@ -35,5 +35,10 @@ describe('Integration testing', () => {
       userWithdrawalTestAccount.recordTransaction(transcation.withdrawal(100))
       expect(userWithdrawalTestAccount.transactionHistory[0]).toEqual(['21/2/2023',"", 100 ,900])
     })
+
+    it('updates current balance after withdrawal', () => {
+      userWithdrawalTestAccount.recordTransaction(transcation.withdrawal(100))
+      expect(userWithdrawalTestAccount.currentBalance).toEqual(900)
+    })
   })
 })
