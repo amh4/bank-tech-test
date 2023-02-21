@@ -103,5 +103,17 @@ describe('Account class', () => {
       expect(consoleSpy.mock.calls[1][0]).toBe('22/2/2023 || 100 ||  || 200')
       expect(consoleSpy.mock.calls[2][0]).toBe('20/2/2023 || 100 ||  || 100')
     })
+
+    it('prints header and multiple withdrawals', () => {
+      const mockTransaction2 = new Transaction()
+      mockTransaction.withdrawal.mockImplementation(() => ['20/2/2023', "", 50])
+      mockTransaction2.withdrawal.mockImplementation(() => ['22/2/2023', "", 25])
+      userWithdrawalTestAccount.recordTransaction(mockTransaction.withdrawal())
+      userWithdrawalTestAccount.recordTransaction(mockTransaction2.withdrawal())
+      userWithdrawalTestAccount.printStatement()
+      expect(consoleSpy.mock.calls[0][0]).toBe('date || credit || debit || balance')
+      expect(consoleSpy.mock.calls[1][0]).toBe('22/2/2023 ||  || 25 || 925')
+      expect(consoleSpy.mock.calls[2][0]).toBe('20/2/2023 ||  || 50 || 950')
+    })
   })
 })

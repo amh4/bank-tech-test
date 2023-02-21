@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1676985548365" clover="3.2.0">
-  <project timestamp="1676985548365" name="All files">
-    <metrics statements="34" coveredstatements="34" conditionals="10" coveredconditionals="10" methods="7" coveredmethods="7" elements="51" coveredelements="51" complexity="0" loc="34" ncloc="34" packages="1" files="2" classes="2"/>
+<coverage generated="1676985906281" clover="3.2.0">
+  <project timestamp="1676985906281" name="All files">
+    <metrics statements="35" coveredstatements="35" conditionals="10" coveredconditionals="10" methods="7" coveredmethods="7" elements="52" coveredelements="52" complexity="0" loc="35" ncloc="35" packages="1" files="2" classes="2"/>
     <file name="account.js" path="/Users/adam/Desktop/mock-tech-test/lib/account.js">
-      <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
-      <line num="3" count="22" type="stmt"/>
-      <line num="4" count="22" type="stmt"/>
-      <line num="8" count="13" type="cond" truecount="2" falsecount="0"/>
+      <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+      <line num="3" count="24" type="stmt"/>
+      <line num="4" count="24" type="stmt"/>
+      <line num="8" count="15" type="cond" truecount="2" falsecount="0"/>
       <line num="9" count="8" type="stmt"/>
       <line num="10" count="8" type="stmt"/>
       <line num="11" count="8" type="stmt"/>
       <line num="12" count="8" type="stmt"/>
-      <line num="14" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="14" count="7" type="cond" truecount="2" falsecount="0"/>
       <line num="15" count="1" type="stmt"/>
-      <line num="17" count="4" type="stmt"/>
-      <line num="18" count="4" type="stmt"/>
-      <line num="19" count="4" type="stmt"/>
-      <line num="25" count="3" type="stmt"/>
-      <line num="26" count="3" type="stmt"/>
-      <line num="27" count="3" type="stmt"/>
-      <line num="33" count="1" type="stmt"/>
+      <line num="17" count="6" type="stmt"/>
+      <line num="18" count="6" type="stmt"/>
+      <line num="19" count="6" type="stmt"/>
+      <line num="20" count="6" type="stmt"/>
+      <line num="26" count="4" type="stmt"/>
+      <line num="27" count="4" type="stmt"/>
+      <line num="28" count="5" type="stmt"/>
+      <line num="32" count="1" type="stmt"/>
     </file>
     <file name="transaction.js" path="/Users/adam/Desktop/mock-tech-test/lib/transaction.js">
       <metrics statements="18" coveredstatements="18" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
