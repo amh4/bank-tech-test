@@ -5,6 +5,7 @@ describe('Integration testing', () => {
   beforeEach(() => {
     transaction = new Transaction()
     transaction2 = new Transaction()
+    transaction3 = new Transaction()
     userAccount = new Account(0)
     userWithdrawalTestAccount = new Account(1000)
     consoleSpy = jest.spyOn(console, 'log')
@@ -89,6 +90,17 @@ describe('Integration testing', () => {
       expect(consoleSpy.mock.calls[0][0]).toBe('date || credit || debit || balance')
       expect(consoleSpy.mock.calls[1][0]).toBe('21/2/2023 ||  || 100 || 400')
       expect(consoleSpy.mock.calls[2][0]).toBe('21/2/2023 ||  || 500 || 500')
+    })
+
+    it('prints header and values for mixed transactions', () => {
+      userAccount.recordTransaction(transaction.deposit(1000))
+      userAccount.recordTransaction(transaction2.withdrawal(100))
+      userAccount.recordTransaction(transaction3.withdrawal(100))
+      userAccount.printStatement()
+      expect(consoleSpy.mock.calls[0][0]).toBe('date || credit || debit || balance')
+      expect(consoleSpy.mock.calls[1][0]).toBe('21/2/2023 ||  || 100 || 800')
+      expect(consoleSpy.mock.calls[2][0]).toBe('21/2/2023 ||  || 100 || 900')
+      expect(consoleSpy.mock.calls[3][0]).toBe('21/2/2023 || 1000 ||  || 1000')
     })
   })
 })

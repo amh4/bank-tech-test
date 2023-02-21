@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1676989791681" clover="3.2.0">
-  <project timestamp="1676989791682" name="All files">
+<coverage generated="1676990082609" clover="3.2.0">
+  <project timestamp="1676990082609" name="All files">
     <metrics statements="35" coveredstatements="35" conditionals="10" coveredconditionals="10" methods="7" coveredmethods="7" elements="52" coveredelements="52" complexity="0" loc="35" ncloc="35" packages="1" files="2" classes="2"/>
     <file name="account.js" path="/Users/adam/Desktop/mock-tech-test/lib/account.js">
       <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
-      <line num="3" count="48" type="stmt"/>
-      <line num="4" count="48" type="stmt"/>
-      <line num="8" count="31" type="cond" truecount="2" falsecount="0"/>
-      <line num="9" count="16" type="stmt"/>
-      <line num="10" count="16" type="stmt"/>
-      <line num="11" count="16" type="stmt"/>
-      <line num="12" count="16" type="stmt"/>
-      <line num="14" count="15" type="cond" truecount="2" falsecount="0"/>
+      <line num="3" count="50" type="stmt"/>
+      <line num="4" count="50" type="stmt"/>
+      <line num="8" count="34" type="cond" truecount="2" falsecount="0"/>
+      <line num="9" count="17" type="stmt"/>
+      <line num="10" count="17" type="stmt"/>
+      <line num="11" count="17" type="stmt"/>
+      <line num="12" count="17" type="stmt"/>
+      <line num="14" count="17" type="cond" truecount="2" falsecount="0"/>
       <line num="15" count="2" type="stmt"/>
-      <line num="17" count="13" type="stmt"/>
-      <line num="18" count="13" type="stmt"/>
-      <line num="19" count="13" type="stmt"/>
-      <line num="20" count="13" type="stmt"/>
-      <line num="26" count="9" type="stmt"/>
-      <line num="27" count="9" type="stmt"/>
-      <line num="28" count="12" type="stmt"/>
+      <line num="17" count="15" type="stmt"/>
+      <line num="18" count="15" type="stmt"/>
+      <line num="19" count="15" type="stmt"/>
+      <line num="20" count="15" type="stmt"/>
+      <line num="26" count="10" type="stmt"/>
+      <line num="27" count="10" type="stmt"/>
+      <line num="28" count="15" type="stmt"/>
       <line num="32" count="2" type="stmt"/>
     </file>
     <file name="transaction.js" path="/Users/adam/Desktop/mock-tech-test/lib/transaction.js">
       <metrics statements="18" coveredstatements="18" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
-      <line num="3" count="29" type="stmt"/>
-      <line num="7" count="11" type="cond" truecount="2" falsecount="0"/>
-      <line num="8" count="10" type="stmt"/>
-      <line num="9" count="10" type="stmt"/>
+      <line num="3" count="43" type="stmt"/>
+      <line num="7" count="12" type="cond" truecount="2" falsecount="0"/>
+      <line num="8" count="11" type="stmt"/>
+      <line num="9" count="11" type="stmt"/>
       <line num="11" count="1" type="stmt"/>
-      <line num="16" count="9" type="cond" truecount="2" falsecount="0"/>
-      <line num="17" count="8" type="stmt"/>
-      <line num="18" count="8" type="stmt"/>
+      <line num="16" count="11" type="cond" truecount="2" falsecount="0"/>
+      <line num="17" count="10" type="stmt"/>
+      <line num="18" count="10" type="stmt"/>
       <line num="20" count="1" type="stmt"/>
-      <line num="25" count="18" type="stmt"/>
-      <line num="26" count="18" type="stmt"/>
-      <line num="27" count="18" type="stmt"/>
-      <line num="28" count="18" type="stmt"/>
-      <line num="29" count="18" type="stmt"/>
-      <line num="33" count="20" type="cond" truecount="2" falsecount="0"/>
-      <line num="34" count="18" type="stmt"/>
+      <line num="25" count="21" type="stmt"/>
+      <line num="26" count="21" type="stmt"/>
+      <line num="27" count="21" type="stmt"/>
+      <line num="28" count="21" type="stmt"/>
+      <line num="29" count="21" type="stmt"/>
+      <line num="33" count="23" type="cond" truecount="2" falsecount="0"/>
+      <line num="34" count="21" type="stmt"/>
       <line num="36" count="2" type="stmt"/>
       <line num="42" count="3" type="stmt"/>
     </file>
