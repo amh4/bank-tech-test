@@ -27,5 +27,7 @@ describe('Account class', () => {
       userAccount.recordTransaction(secondMockTransaction.deposit())
       expect(userAccount.transactionHistory).toEqual([['21/2/2023', 150, ""],['20/2/2023', 100, ""]])
     })
+
+    // it('checks whether the transaction is a credit and adds to current balance')
   })
 })
