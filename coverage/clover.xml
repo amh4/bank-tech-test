@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1676990082609" clover="3.2.0">
-  <project timestamp="1676990082609" name="All files">
+<coverage generated="1676990289766" clover="3.2.0">
+  <project timestamp="1676990289766" name="All files">
     <metrics statements="35" coveredstatements="35" conditionals="10" coveredconditionals="10" methods="7" coveredmethods="7" elements="52" coveredelements="52" complexity="0" loc="35" ncloc="35" packages="1" files="2" classes="2"/>
     <file name="account.js" path="/Users/adam/Desktop/mock-tech-test/lib/account.js">
       <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
