@@ -49,7 +49,7 @@ describe('Account class', () => {
     it('adds a mock withdrawal to this.transactionHistory', () => {
       const mockTransaction = new Transaction()
       mockTransaction.withdrawal.mockImplementation(() => ['19/2/2023', "", 100])
-      const userAccount = new Account(0)
+      const userAccount = new Account(1000)
       userAccount.recordTransaction(mockTransaction.withdrawal())
       expect(userAccount.transactionHistory[0][0]).toEqual('19/2/2023')
       expect(userAccount.transactionHistory[0][1]).toEqual("")
@@ -61,10 +61,27 @@ describe('Account class', () => {
       const secondMockTransaction = new Transaction()
       firstMockTransaction.withdrawal.mockImplementation(() => ['20/2/2023', "", 300])
       secondMockTransaction.withdrawal.mockImplementation(() => ['21/2/2023', "", 250])
-      const userAccount = new Account(0)
+      const userAccount = new Account(1000)
       userAccount.recordTransaction(firstMockTransaction.withdrawal())
       userAccount.recordTransaction(secondMockTransaction.withdrawal())
       expect(userAccount.transactionHistory).toHaveLength(2)
+    })
+
+    it('returns insufficient funds if balance will fall below 0 on withdrawal', () => {
+      const mockTransaction = new Transaction()
+      mockTransaction.withdrawal.mockImplementation(() => ['19/2/2023', "", 100])
+      const userAccount = new Account(0)
+      expect(userAccount.recordTransaction(mockTransaction.withdrawal())).toEqual('Insufficient Funds')
+    })
+  })
+
+  describe('printStatement', () => {
+    it('prints out the header in a statement format', () => {
+      const userAccount = new Account(0)
+
+      const consoleSpy = jest.spyOn(console, 'log')
+      userAccount.printStatement()
+      expect(consoleSpy).toHaveBeenCalledWith('date || credit || debit || balance')
     })
   })
 })

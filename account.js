@@ -10,9 +10,18 @@ class Account{
       transaction.push(this.currentBalance)
       this.transactionHistory.unshift(transaction)
     } else {
-      this.transactionHistory.unshift(transaction)
+      if(this.currentBalance - transaction[2] < 0){
+        return 'Insufficient Funds'
+      } else {
+        this.transactionHistory.unshift(transaction)
+      }
     }
   }
+
+  printStatement(){
+    console.log('date || credit || debit || balance')
+  }
+
 
 }
 
