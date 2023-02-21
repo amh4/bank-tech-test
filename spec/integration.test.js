@@ -72,5 +72,15 @@ describe('Integration testing', () => {
       expect(consoleSpy.mock.calls[0][0]).toBe('date || credit || debit || balance')
       expect(consoleSpy.mock.calls[1][0]).toBe('21/2/2023 || 20 ||  || 20')
     })
+
+    it('prints header with multiple deposits', () => {
+      const transaction2 = new Transaction()
+      userAccount.recordTransaction(transaction.deposit(151))
+      userAccount.recordTransaction(transaction2.deposit(49))
+      userAccount.printStatement()
+      expect(consoleSpy.mock.calls[0][0]).toBe('date || credit || debit || balance')
+      expect(consoleSpy.mock.calls[1][0]).toBe('21/2/2023 || 49 ||  || 200')
+      expect(consoleSpy.mock.calls[2][0]).toBe('21/2/2023 || 151 ||  || 151')
+    })
   })
 })
