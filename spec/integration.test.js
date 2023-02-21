@@ -15,10 +15,18 @@ describe('Integration testing', () => {
     consoleSpy.mockRestore()
   })
 
+  const dateFormatter = () => {
+    const date = new Date()
+    let day = date.getDate()
+    let month = date.getMonth()+1
+    let year = date.getFullYear()
+    return `${day}/${month}/${year}`
+  }
+
   describe('recordTransaction', () => {
     it('adds a deposit to this.transactionHistory', () => {
       userAccount.recordTransaction(transaction.deposit(100))
-      expect(userAccount.transactionHistory[0][0]).toEqual('21/2/2023')
+      expect(userAccount.transactionHistory[0][0]).toEqual(`${dateFormatter()}`)
       expect(userAccount.transactionHistory[0][1]).toEqual(100)
       expect(userAccount.transactionHistory[0][2]).toEqual("")
     })
@@ -28,8 +36,8 @@ describe('Integration testing', () => {
       userAccount.recordTransaction(transaction.deposit(100))
       userAccount.recordTransaction(transaction2.deposit(900))
       expect(userAccount.transactionHistory).toHaveLength(2)
-      expect(userAccount.transactionHistory[0]).toEqual(['21/2/2023', 900, "",1000])
-      expect(userAccount.transactionHistory[1]).toEqual(['21/2/2023', 100, "",100])
+      expect(userAccount.transactionHistory[0]).toEqual([`${dateFormatter()}`, 900, "",1000])
+      expect(userAccount.transactionHistory[1]).toEqual([`${dateFormatter()}`, 100, "",100])
     })
 
     it('checks if the transaction is a credit and adds to current balance if true', () => {
@@ -39,7 +47,7 @@ describe('Integration testing', () => {
 
     it('records a withdrawal in the transaction history', () => {
       userWithdrawalTestAccount.recordTransaction(transaction.withdrawal(100))
-      expect(userWithdrawalTestAccount.transactionHistory[0]).toEqual(['21/2/2023',"", 100 ,900])
+      expect(userWithdrawalTestAccount.transactionHistory[0]).toEqual([`${dateFormatter()}`,"", 100 ,900])
     })
 
     it('updates current balance after withdrawal', () => {
@@ -51,8 +59,8 @@ describe('Integration testing', () => {
       userWithdrawalTestAccount.recordTransaction(transaction.withdrawal(100))
       userWithdrawalTestAccount.recordTransaction(transaction2.withdrawal(300))
       expect(userWithdrawalTestAccount.transactionHistory).toHaveLength(2)
-      expect(userWithdrawalTestAccount.transactionHistory[0]).toEqual(['21/2/2023',"", 300 ,600])
-      expect(userWithdrawalTestAccount.transactionHistory[1]).toEqual(['21/2/2023',"", 100 ,900])
+      expect(userWithdrawalTestAccount.transactionHistory[0]).toEqual([`${dateFormatter()}`,"", 300 ,600])
+      expect(userWithdrawalTestAccount.transactionHistory[1]).toEqual([`${dateFormatter()}`,"", 100 ,900])
     })
 
     it('returns insufficient funds if balance will fall below 0 post withdrawal', () => {
@@ -71,7 +79,7 @@ describe('Integration testing', () => {
       userAccount.printStatement()
       expect(consoleSpy).toHaveBeenCalledTimes(2)
       expect(consoleSpy.mock.calls[0][0]).toBe('date || credit || debit || balance')
-      expect(consoleSpy.mock.calls[1][0]).toBe('21/2/2023 || 20 ||  || 20')
+      expect(consoleSpy.mock.calls[1][0]).toBe(`${dateFormatter()} || 20 ||  || 20`)
     })
 
     it('prints header with multiple deposits', () => {
@@ -79,8 +87,8 @@ describe('Integration testing', () => {
       userAccount.recordTransaction(transaction2.deposit(49))
       userAccount.printStatement()
       expect(consoleSpy.mock.calls[0][0]).toBe('date || credit || debit || balance')
-      expect(consoleSpy.mock.calls[1][0]).toBe('21/2/2023 || 49 ||  || 200')
-      expect(consoleSpy.mock.calls[2][0]).toBe('21/2/2023 || 151 ||  || 151')
+      expect(consoleSpy.mock.calls[1][0]).toBe(`${dateFormatter()} || 49 ||  || 200`)
+      expect(consoleSpy.mock.calls[2][0]).toBe(`${dateFormatter()} || 151 ||  || 151`)
     })
 
     it('prints header with multiple withdrawals', () => {
@@ -88,8 +96,8 @@ describe('Integration testing', () => {
       userWithdrawalTestAccount.recordTransaction(transaction2.withdrawal(100))
       userWithdrawalTestAccount.printStatement()
       expect(consoleSpy.mock.calls[0][0]).toBe('date || credit || debit || balance')
-      expect(consoleSpy.mock.calls[1][0]).toBe('21/2/2023 ||  || 100 || 400')
-      expect(consoleSpy.mock.calls[2][0]).toBe('21/2/2023 ||  || 500 || 500')
+      expect(consoleSpy.mock.calls[1][0]).toBe(`${dateFormatter()} ||  || 100 || 400`)
+      expect(consoleSpy.mock.calls[2][0]).toBe(`${dateFormatter()} ||  || 500 || 500`)
     })
 
     it('prints header and values for mixed transactions', () => {
@@ -98,9 +106,9 @@ describe('Integration testing', () => {
       userAccount.recordTransaction(transaction3.withdrawal(100))
       userAccount.printStatement()
       expect(consoleSpy.mock.calls[0][0]).toBe('date || credit || debit || balance')
-      expect(consoleSpy.mock.calls[1][0]).toBe('21/2/2023 ||  || 100 || 800')
-      expect(consoleSpy.mock.calls[2][0]).toBe('21/2/2023 ||  || 100 || 900')
-      expect(consoleSpy.mock.calls[3][0]).toBe('21/2/2023 || 1000 ||  || 1000')
+      expect(consoleSpy.mock.calls[1][0]).toBe(`${dateFormatter()} ||  || 100 || 800`)
+      expect(consoleSpy.mock.calls[2][0]).toBe(`${dateFormatter()} ||  || 100 || 900`)
+      expect(consoleSpy.mock.calls[3][0]).toBe(`${dateFormatter()} || 1000 ||  || 1000`)
     })
   })
 })
