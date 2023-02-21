@@ -41,12 +41,13 @@ describe('Integration testing', () => {
       expect(userWithdrawalTestAccount.currentBalance).toEqual(900)
     })
 
-    // it('records two withdrawals in transaction history', () => {
-    //   const transaction2 = new Transaction()
-    //   userWithdrawalTestAccount.recordTransaction(transaction.withdrawal(100))
-    //   userWithdrawalTestAccount.recordTransaction(transcation2.withdrawal(300))
-
-
-    // })
+    it('records two withdrawals in transaction history', () => {
+      const transaction2 = new Transaction()
+      userWithdrawalTestAccount.recordTransaction(transaction.withdrawal(100))
+      userWithdrawalTestAccount.recordTransaction(transaction2.withdrawal(300))
+      expect(userWithdrawalTestAccount.transactionHistory).toHaveLength(2)
+      expect(userWithdrawalTestAccount.transactionHistory[0]).toEqual(['21/2/2023',"", 300 ,600])
+      expect(userWithdrawalTestAccount.transactionHistory[1]).toEqual(['21/2/2023',"", 100 ,900])
+    })
   })
 })
