@@ -161,3 +161,10 @@ account.printStatement()
 If you want to jest test this programme yourself navigate to the parent directory and run 'jest --coverage' in the terminal.
 
 Test coverage is 100% for a total of 31 tests, across 3 test suites. A screenshot of this is in the results file.
+
+The mock tests with the account.test.js demonstrate the programme displaying transactions with the most recent being first.
+
+For the integration tests where the methods are called, not their mock counter parts, I have created a dateFormatter method.
+
+This is to ensure that when the test is run and a new transation is created at that moment in time, the test will have
+the correct expectation, rather than an outdated date.
