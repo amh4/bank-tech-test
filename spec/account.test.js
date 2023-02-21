@@ -55,5 +55,16 @@ describe('Account class', () => {
       expect(userAccount.transactionHistory[0][1]).toEqual("")
       expect(userAccount.transactionHistory[0][2]).toEqual(100)
     })
+
+    it('adds two mock withdrawals to this.transactionHistory', () => {
+      const firstMockTransaction = new Transaction()
+      const secondMockTransaction = new Transaction()
+      firstMockTransaction.withdrawal.mockImplementation(() => ['20/2/2023', "", 300])
+      secondMockTransaction.withdrawal.mockImplementation(() => ['21/2/2023', "", 250])
+      const userAccount = new Account(0)
+      userAccount.recordTransaction(firstMockTransaction.withdrawal())
+      userAccount.recordTransaction(secondMockTransaction.withdrawal())
+      expect(userAccount.transactionHistory).toHaveLength(2)
+    })
   })
 })
