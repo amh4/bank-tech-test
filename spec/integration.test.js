@@ -4,6 +4,7 @@ const Transaction = require('../lib/transaction')
 describe('Integration testing', () => {
   beforeEach(() => {
     transaction = new Transaction()
+    transaction2 = new Transaction()
     userAccount = new Account(0)
     userWithdrawalTestAccount = new Account(1000)
     consoleSpy = jest.spyOn(console, 'log')
@@ -46,7 +47,6 @@ describe('Integration testing', () => {
     })
 
     it('records two withdrawals in transaction history', () => {
-      const transaction2 = new Transaction()
       userWithdrawalTestAccount.recordTransaction(transaction.withdrawal(100))
       userWithdrawalTestAccount.recordTransaction(transaction2.withdrawal(300))
       expect(userWithdrawalTestAccount.transactionHistory).toHaveLength(2)
@@ -74,13 +74,21 @@ describe('Integration testing', () => {
     })
 
     it('prints header with multiple deposits', () => {
-      const transaction2 = new Transaction()
       userAccount.recordTransaction(transaction.deposit(151))
       userAccount.recordTransaction(transaction2.deposit(49))
       userAccount.printStatement()
       expect(consoleSpy.mock.calls[0][0]).toBe('date || credit || debit || balance')
       expect(consoleSpy.mock.calls[1][0]).toBe('21/2/2023 || 49 ||  || 200')
       expect(consoleSpy.mock.calls[2][0]).toBe('21/2/2023 || 151 ||  || 151')
+    })
+
+    it('prints header with multiple withdrawals', () => {
+      userWithdrawalTestAccount.recordTransaction(transaction.withdrawal(500))
+      userWithdrawalTestAccount.recordTransaction(transaction2.withdrawal(100))
+      userWithdrawalTestAccount.printStatement()
+      expect(consoleSpy.mock.calls[0][0]).toBe('date || credit || debit || balance')
+      expect(consoleSpy.mock.calls[1][0]).toBe('21/2/2023 ||  || 100 || 400')
+      expect(consoleSpy.mock.calls[2][0]).toBe('21/2/2023 ||  || 500 || 500')
     })
   })
 })
