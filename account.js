@@ -24,8 +24,6 @@ class Account{
     this.transactionHistory.forEach(transaction => 
       console.log(`${transaction[0]} || ${transaction[1]} || ${transaction[2]} || ${transaction[3]}`))
   }
-
-
 }
 
 module.exports = Account

@@ -83,24 +83,25 @@ describe('Account class', () => {
     })
   })
 
-  // describe('printStatement', () => {
-  //   it('prints out the header in a statement format', () => {
-  //     const userAccount = new Account(0)
-  //     const consoleSpy = jest.spyOn(console, 'log')
-  //     userAccount.printStatement()
-  //     expect(consoleSpy).toHaveBeenCalledWith('date || credit || debit || balance')
-  //   })
+  describe('printStatement', () => {
+    it('prints out the header in a statement format', () => {
+      const userAccount = new Account(0)
+      const consoleSpy = jest.spyOn(console, 'log')
+      userAccount.printStatement()
+      expect(consoleSpy).toHaveBeenCalledWith('date || credit || debit || balance')
+      consoleSpy.mockRestore()
+    })
 
-  //   it('prints header and transaction', () => {
-  //     const mockTransaction = new Transaction()
-  //     const userAccount = new Account(0)
-  //     mockTransaction.deposit.mockImplementation(() => ['20/2/2023', 100, ""])
-  //     userAccount.recordTransaction(mockTransaction.deposit())
-  //     const consoleSpy = jest.spyOn(console, 'log')
-  //     userAccount.printStatement()
-  //     // expect(consoleSpy).toHaveBeenCalledTimes(2)
-  //     expect(consoleSpy).toHaveBeenCalledWith('date || credit || debit || balance')
-  //     expect(consoleSpy).toHaveBeenCalledWith('20/2/2023 || 100 || || 100')
-  //   })
-  // })
+    it('prints header and transaction', () => {
+      const mockTransaction = new Transaction()
+      const userAccount = new Account(0)
+      mockTransaction.deposit.mockImplementation(() => ['20/2/2023', 100, ""])
+      userAccount.recordTransaction(mockTransaction.deposit())
+      const consoleSpy = jest.spyOn(console, 'log')
+      userAccount.printStatement()
+      expect(consoleSpy).toHaveBeenCalledTimes(2)
+      expect(consoleSpy.mock.calls[0][0]).toBe('date || credit || debit || balance')
+      expect(consoleSpy.mock.calls[1][0]).toBe('20/2/2023 || 100 ||  || 100')
+    })
+  })
 })
