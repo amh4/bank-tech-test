@@ -83,7 +83,7 @@ describe('Account class', () => {
       expect(consoleSpy).toHaveBeenCalledWith('date || credit || debit || balance')
     })
 
-    it('prints header and transaction', () => {
+    it('prints header and 1 transaction', () => {
       mockTransaction.deposit.mockImplementation(() => ['20/2/2023', 100, ""])
       userAccount.recordTransaction(mockTransaction.deposit())
       userAccount.printStatement()

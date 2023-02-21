@@ -9,6 +9,10 @@ describe('Integration testing', () => {
     consoleSpy = jest.spyOn(console, 'log')
   })
 
+  afterEach(() => {
+    consoleSpy.mockRestore()
+  })
+
   describe('recordTransaction', () => {
     it('adds a deposit to this.transactionHistory', () => {
       userAccount.recordTransaction(transaction.deposit(100))
@@ -59,6 +63,14 @@ describe('Integration testing', () => {
     it('prints out the header in the requested format', () => {
       userAccount.printStatement()
       expect(consoleSpy).toHaveBeenCalledWith('date || credit || debit || balance')
+    })
+
+    it('prints header and 1 transaction', () => {
+      userAccount.recordTransaction(transaction.deposit(20))
+      userAccount.printStatement()
+      expect(consoleSpy).toHaveBeenCalledTimes(2)
+      expect(consoleSpy.mock.calls[0][0]).toBe('date || credit || debit || balance')
+      expect(consoleSpy.mock.calls[1][0]).toBe('21/2/2023 || 20 ||  || 20')
     })
   })
 })
