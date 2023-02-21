@@ -14,7 +14,7 @@ describe('Account class', () => {
       mockTransaction.deposit.mockImplementation(() => ['20/2/2023', 100, ""])
       const userAccount = new Account(0)
       userAccount.recordTransaction(mockTransaction.deposit())
-      expect(userAccount.transactionHistory).toEqual([['20/2/2023', 100, ""]])
+      expect(userAccount.transactionHistory[0]).toEqual(['20/2/2023', 100, "", 100])
     })
 
     it('adds two mock deposits to this. transactionHistory', () => {
@@ -25,7 +25,7 @@ describe('Account class', () => {
       const userAccount = new Account(0)
       userAccount.recordTransaction(firstMockTransaction.deposit())
       userAccount.recordTransaction(secondMockTransaction.deposit())
-      expect(userAccount.transactionHistory).toEqual([['21/2/2023', 150, ""],['20/2/2023', 100, ""]])
+      expect(userAccount.transactionHistory).toEqual([['21/2/2023', 150, "", 250],['20/2/2023', 100, "", 100]])
     })
 
     it('checks whether the transaction is a credit and adds to current balance', () => {
@@ -34,6 +34,14 @@ describe('Account class', () => {
       const userAccount = new Account(0)
       userAccount.recordTransaction(mockTransaction.deposit())
       expect(userAccount.currentBalance).toEqual(100)
+    })
+
+    it('when the transaction is added to the history it includes the net balance', () => {
+      const mockTransaction = new Transaction()
+      mockTransaction.deposit.mockImplementation(() => ['20/2/2023', 100, ""])
+      const userAccount = new Account(0)
+      userAccount.recordTransaction(mockTransaction.deposit())
+      expect(userAccount.transactionHistory).toEqual([['20/2/2023', 100, "", 100]])
     })
   })
 })
