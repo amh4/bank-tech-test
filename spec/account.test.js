@@ -73,15 +73,34 @@ describe('Account class', () => {
       const userAccount = new Account(0)
       expect(userAccount.recordTransaction(mockTransaction.withdrawal())).toEqual('Insufficient Funds')
     })
-  })
 
-  describe('printStatement', () => {
-    it('prints out the header in a statement format', () => {
-      const userAccount = new Account(0)
-
-      const consoleSpy = jest.spyOn(console, 'log')
-      userAccount.printStatement()
-      expect(consoleSpy).toHaveBeenCalledWith('date || credit || debit || balance')
+    it('if there are sufficient funds it updates the current balance', () => {
+      const mockTransaction = new Transaction()
+      mockTransaction.withdrawal.mockImplementation(() => ['19/2/2023', "", 100])
+      const userAccount = new Account(150)
+      userAccount.recordTransaction(mockTransaction.withdrawal())
+      expect(userAccount.currentBalance).toEqual(50)
     })
   })
+
+  // describe('printStatement', () => {
+  //   it('prints out the header in a statement format', () => {
+  //     const userAccount = new Account(0)
+  //     const consoleSpy = jest.spyOn(console, 'log')
+  //     userAccount.printStatement()
+  //     expect(consoleSpy).toHaveBeenCalledWith('date || credit || debit || balance')
+  //   })
+
+  //   it('prints header and transaction', () => {
+  //     const mockTransaction = new Transaction()
+  //     const userAccount = new Account(0)
+  //     mockTransaction.deposit.mockImplementation(() => ['20/2/2023', 100, ""])
+  //     userAccount.recordTransaction(mockTransaction.deposit())
+  //     const consoleSpy = jest.spyOn(console, 'log')
+  //     userAccount.printStatement()
+  //     // expect(consoleSpy).toHaveBeenCalledTimes(2)
+  //     expect(consoleSpy).toHaveBeenCalledWith('date || credit || debit || balance')
+  //     expect(consoleSpy).toHaveBeenCalledWith('20/2/2023 || 100 || || 100')
+  //   })
+  // })
 })

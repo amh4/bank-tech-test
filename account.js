@@ -13,6 +13,7 @@ class Account{
       if(this.currentBalance - transaction[2] < 0){
         return 'Insufficient Funds'
       } else {
+        this.currentBalance -= transaction[2]
         this.transactionHistory.unshift(transaction)
       }
     }
@@ -20,6 +21,8 @@ class Account{
 
   printStatement(){
     console.log('date || credit || debit || balance')
+    this.transactionHistory.forEach(transaction => 
+      console.log(`${transaction[0]} || ${transaction[1]} || ${transaction[2]} || ${transaction[3]}`))
   }
 
 
