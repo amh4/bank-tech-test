@@ -10,11 +10,20 @@ describe('Integration testing', () => {
   })
 
   describe('recordTransaction', () => {
-    it('adds a transaction to this.transactionHistory', () => {
+    it('adds a deposit to this.transactionHistory', () => {
       userAccount.recordTransaction(transcation.deposit(100))
       expect(userAccount.transactionHistory[0][0]).toEqual('21/2/2023')
       expect(userAccount.transactionHistory[0][1]).toEqual(100)
       expect(userAccount.transactionHistory[0][2]).toEqual("")
+    })
+
+    it('adds two deposits to this.transactionHistory', () => {
+      const transaction2 = new Transaction()
+      userAccount.recordTransaction(transcation.deposit(100))
+      userAccount.recordTransaction(transaction2.deposit(900))
+      expect(userAccount.transactionHistory).toHaveLength(2)
+      expect(userAccount.transactionHistory[0]).toEqual(['21/2/2023', 900, "",1000])
+      expect(userAccount.transactionHistory[1]).toEqual(['21/2/2023', 100, "",100])
     })
   })
 })
