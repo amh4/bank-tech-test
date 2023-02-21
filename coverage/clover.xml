@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1676977185612" clover="3.2.0">
-  <project timestamp="1676977185613" name="All files">
+<coverage generated="1676977982527" clover="3.2.0">
+  <project timestamp="1676977982527" name="All files">
     <metrics statements="30" coveredstatements="30" conditionals="10" coveredconditionals="10" methods="7" coveredmethods="7" elements="47" coveredelements="47" complexity="0" loc="30" ncloc="30" packages="1" files="2" classes="2"/>
     <file name="account.js" path="/Users/adam/Desktop/mock-tech-test/account.js">
       <metrics statements="14" coveredstatements="14" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
-      <line num="3" count="10" type="stmt"/>
-      <line num="4" count="10" type="stmt"/>
+      <line num="3" count="20" type="stmt"/>
+      <line num="4" count="20" type="stmt"/>
       <line num="8" count="11" type="cond" truecount="2" falsecount="0"/>
       <line num="9" count="6" type="stmt"/>
       <line num="10" count="6" type="stmt"/>
@@ -17,7 +17,7 @@
       <line num="23" count="2" type="stmt"/>
       <line num="24" count="2" type="stmt"/>
       <line num="25" count="1" type="stmt"/>
-      <line num="31" count="1" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
     </file>
     <file name="transaction.js" path="/Users/adam/Desktop/mock-tech-test/transaction.js">
       <metrics statements="16" coveredstatements="16" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
