@@ -25,5 +25,10 @@ describe('Integration testing', () => {
       expect(userAccount.transactionHistory[0]).toEqual(['21/2/2023', 900, "",1000])
       expect(userAccount.transactionHistory[1]).toEqual(['21/2/2023', 100, "",100])
     })
+
+    it('checks if the transaction is a credit and adds to current balance if true', () => {
+      userAccount.recordTransaction(transcation.deposit(200))
+      expect(userAccount.currentBalance).toEqual(200)
+    })
   })
 })
