@@ -107,3 +107,57 @@ class Account{
 
 - User cannot withdraw balance below £0 needs to be checked in withdraw method
 - User should only be able to enter a number cannot accept strings. Could have another method to house this as it will need to be called within deposit and withdraw
+
+## To run the programme
+
+### Running the programme
+
+1. Clone this repoistory to your local work area.
+2. Run the following to setup the environment, use node and install jest
+
+```
+# Setup our environment to use node latest version
+$ nvm use node
+
+# Create the project directory
+$ mkdir my-project
+$ cd my-project
+
+# Initialise the NPM project (this will create a file package.json)
+$ npm init -y
+
+# Add the jest package to our project
+# (this will update package.json and package-lock.json)
+$ npm add jest
+
+# Also install jest "globally"
+# (this is so we can run the `jest` command)
+$ npm install -g jest
+
+# Run our tests
+$ jest
+
+```
+
+3. Below is an example of how you can run the programme yourself using node. First of all you require in the files. Then for example, for each transaction, a withdrawal or deposit,
+   you want to make you will need to create a new instance of Transaction. If you want to process this transaction you need to record it into the account by passing it as an argument into account.recordTransaction(). This will make sure that for a withdrawal you have enough funds and record all transactions in reverse chronological order.
+
+When printStatement() is called you get the specified output as exampled in the results directory in this repository.
+
+```
+const Transaction = require('./lib/transaction.js')
+const Account = require('./lib/account.js')
+const account = new Account(0)
+const transaction1 = new Transaction
+const transaction2 = new Transaction
+
+account.recordTransaction(transaction1.deposit(100))
+account.recordTransaction(transaction2.withdrawal(50))
+account.printStatement()
+```
+
+### Testing
+
+If you want to jest test this programme yourself navigate to the parent directory and run 'jest --coverage' in the terminal.
+
+Test coverage is 100% for a total of 31 tests, across 3 test suites. A screenshot of this is in the results file.
