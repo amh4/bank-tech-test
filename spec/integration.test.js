@@ -49,5 +49,9 @@ describe('Integration testing', () => {
       expect(userWithdrawalTestAccount.transactionHistory[0]).toEqual(['21/2/2023',"", 300 ,600])
       expect(userWithdrawalTestAccount.transactionHistory[1]).toEqual(['21/2/2023',"", 100 ,900])
     })
+
+    it('returns insufficient funds if balance will fall below 0 post withdrawal', () => {
+      expect(userAccount.recordTransaction(transaction.withdrawal(100))).toEqual('Insufficient Funds')
+    })
   })
 })
