@@ -54,4 +54,11 @@ describe('Integration testing', () => {
       expect(userAccount.recordTransaction(transaction.withdrawal(100))).toEqual('Insufficient Funds')
     })
   })
+
+  describe('printStatement', () => {
+    it('prints out the header in the requested format', () => {
+      userAccount.printStatement()
+      expect(consoleSpy).toHaveBeenCalledWith('date || credit || debit || balance')
+    })
+  })
 })
