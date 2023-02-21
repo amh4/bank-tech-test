@@ -91,5 +91,17 @@ describe('Account class', () => {
       expect(consoleSpy.mock.calls[0][0]).toBe('date || credit || debit || balance')
       expect(consoleSpy.mock.calls[1][0]).toBe('20/2/2023 || 100 ||  || 100')
     })
+
+    it('prints header and multiple deposits', () => {
+      const mockTransaction2 = new Transaction()
+      mockTransaction.deposit.mockImplementation(() => ['20/2/2023', 100, ""])
+      mockTransaction2.deposit.mockImplementation(() => ['22/2/2023', 100, ""])
+      userAccount.recordTransaction(mockTransaction.deposit())
+      userAccount.recordTransaction(mockTransaction2.deposit())
+      userAccount.printStatement()
+      expect(consoleSpy.mock.calls[0][0]).toBe('date || credit || debit || balance')
+      expect(consoleSpy.mock.calls[1][0]).toBe('22/2/2023 || 100 ||  || 200')
+      expect(consoleSpy.mock.calls[2][0]).toBe('20/2/2023 || 100 ||  || 100')
+    })
   })
 })
