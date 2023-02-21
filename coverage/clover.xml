@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1676977982527" clover="3.2.0">
-  <project timestamp="1676977982527" name="All files">
-    <metrics statements="30" coveredstatements="30" conditionals="10" coveredconditionals="10" methods="7" coveredmethods="7" elements="47" coveredelements="47" complexity="0" loc="30" ncloc="30" packages="1" files="2" classes="2"/>
-    <file name="account.js" path="/Users/adam/Desktop/mock-tech-test/account.js">
+<coverage generated="1676981337801" clover="3.2.0">
+  <project timestamp="1676981337801" name="All files">
+    <metrics statements="32" coveredstatements="32" conditionals="10" coveredconditionals="10" methods="7" coveredmethods="7" elements="49" coveredelements="49" complexity="0" loc="32" ncloc="32" packages="1" files="2" classes="2"/>
+    <file name="account.js" path="/Users/adam/Desktop/mock-tech-test/lib/account.js">
       <metrics statements="14" coveredstatements="14" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
       <line num="3" count="20" type="stmt"/>
       <line num="4" count="20" type="stmt"/>
@@ -19,24 +19,26 @@
       <line num="25" count="1" type="stmt"/>
       <line num="29" count="1" type="stmt"/>
     </file>
-    <file name="transaction.js" path="/Users/adam/Desktop/mock-tech-test/transaction.js">
-      <metrics statements="16" coveredstatements="16" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+    <file name="transaction.js" path="/Users/adam/Desktop/mock-tech-test/lib/transaction.js">
+      <metrics statements="18" coveredstatements="18" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
       <line num="3" count="6" type="stmt"/>
       <line num="7" count="4" type="cond" truecount="2" falsecount="0"/>
       <line num="8" count="3" type="stmt"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="15" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="16" count="1" type="stmt"/>
+      <line num="9" count="3" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="16" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="17" count="1" type="stmt"/>
       <line num="18" count="1" type="stmt"/>
-      <line num="23" count="4" type="stmt"/>
-      <line num="24" count="4" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
       <line num="25" count="4" type="stmt"/>
       <line num="26" count="4" type="stmt"/>
       <line num="27" count="4" type="stmt"/>
-      <line num="31" count="6" type="cond" truecount="2" falsecount="0"/>
-      <line num="32" count="4" type="stmt"/>
-      <line num="34" count="2" type="stmt"/>
-      <line num="40" count="2" type="stmt"/>
+      <line num="28" count="4" type="stmt"/>
+      <line num="29" count="4" type="stmt"/>
+      <line num="33" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="34" count="4" type="stmt"/>
+      <line num="36" count="2" type="stmt"/>
+      <line num="42" count="2" type="stmt"/>
     </file>
   </project>
 </coverage>

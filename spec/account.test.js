@@ -1,7 +1,7 @@
-const Account = require('../account')
-const Transaction = require('../transaction')
+const Account = require('../lib/account')
+const Transaction = require('../lib/transaction')
 
-jest.mock('../transaction')
+jest.mock('../lib/transaction')
 
 describe('Account class', () => {
   beforeEach(() => {

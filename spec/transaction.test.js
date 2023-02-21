@@ -1,4 +1,4 @@
-const Transaction = require('../transaction')
+const Transaction = require('../lib/transaction')
 
 describe('Transaction class', () => {
   describe('deposit method', () => {
