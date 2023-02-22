@@ -1,5 +1,12 @@
 # Bank Tech Test
 
+## The Tech Used
+<div align="center">
+	<code><img height="40" src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png" alt="JavaScript" title="JavaScript" /></code>
+	<code><img height="40" src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png" alt="Node.js" title="Node.js" /></code>
+	<code><img height="40" src="https://user-images.githubusercontent.com/25181517/187955005-f4ca6f1a-e727-497b-b81b-93fb9726268e.png" alt="Jest" title="Jest" /></code>
+</div>
+
 ## Requirements
 
 1. You should be able to interact with your code via a REPL like IRB or Node.
