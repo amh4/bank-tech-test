@@ -168,3 +168,5 @@ For the integration tests where the methods are called, not their mock counter p
 
 This is to ensure that when the test is run and a new transation is created at that moment in time, the test will have
 the correct expectation, rather than an outdated date.
+
+![](./results/jest-results.png)
